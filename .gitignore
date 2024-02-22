@@ -1,0 +1,11 @@
+.idea
+.fleet
+.DS_Store
+
+dist
+coverage
+node_modules
+
+*.log
+*.local
+.eslintcache
