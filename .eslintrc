@@ -5,6 +5,7 @@
     "browser": true,
     "node": true
   },
+  "plugins": ["html"],
   "extends": [
     "eslint:recommended",
     "plugin:import/recommended",
@@ -86,6 +87,7 @@
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
         "extraFileExtensions": [".vue"],
+        "sourceType": "module",
         "ecmaVersion": "latest",
         "ecmaFeatures": {
           "jsx": true

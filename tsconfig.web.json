@@ -5,8 +5,8 @@
     "composite": true,
     "skipLibCheck": true,
     "jsxImportSource": "vue",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
-  "include": ["packages"],
+  "include": ["apps", "packages"],
   "exclude": ["node_modules", "dist"]
 }

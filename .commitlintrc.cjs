@@ -2,15 +2,16 @@ const cp = require('node:child_process')
 const fs = require('node:fs')
 const path = require('node:path')
 
+const apps = fs.readdirSync(path.resolve(__dirname, 'apps'))
 const packages = fs.readdirSync(path.resolve(__dirname, 'packages'))
-const scopes = Array.from(new Set([...packages]))
+const scopes = Array.from(new Set([...apps, ...packages]))
 
 const gitStatus = cp.execSync('git status --porcelain || true').toString().trim().split('\n')
 
 const scopeComplete = gitStatus
-  .find((r) => ~r.indexOf('M  packages'))
+  .find((r) => ~r.indexOf('M  apps') || ~r.indexOf('M  packages'))
   ?.replace(/\//g, '%%')
-  ?.match(/packages%%((\w|-)*)/)?.[1]
+  ?.match(/(apps|packages)%%((\w|-)*)/)?.[1]
 
 /** @type {import('cz-git').UserConfig} */
 module.exports = {
