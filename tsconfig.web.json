@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "composite": true,
+    "skipLibCheck": true,
+    "jsxImportSource": "vue",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+  },
+  "include": ["packages"],
+  "exclude": ["node_modules", "dist"]
+}

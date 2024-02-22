@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "allowJs": false,
+    "target": "ES2021",
+    "module": "ESNext",
+    "noUnusedLocals": true,
+    "removeComments": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@scope/*": ["packages/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
