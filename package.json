@@ -24,6 +24,6 @@
     "pnpm": ">= 8"
   },
   "lint-staged": {
-    "*.{vue,js,ts,jsx,tsx,md,json}": "eslint --fix"
+    "*.{html,js,ts,jsx,tsx,vue,md,json}": "eslint --fix"
   }
 }
