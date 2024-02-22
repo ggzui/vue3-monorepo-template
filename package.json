@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "cz": "czg",
-    "lint": "eslint . --ext .html,.js,.ts,.jsx,.tsx,.vue,.md,.json --max-warnings 0 --cache",
-    "lint:fix": "pnpm run lint --fix",
+    "lint": "pnpm run lint:eslint && pnpm run lint:style",
+    "lint:eslint": "eslint . --ext .html,.js,.ts,.jsx,.tsx,.vue,.md,.json --max-warnings 0 --cache",
+    "lint:style": "stylelint \"**/*.{html,css,scss,less,vue}\" --cache --allow-empty-input",
+    "lint:fix": "pnpm run lint:eslint --fix && pnpm run lint:style --fix",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install"
   },
@@ -24,7 +26,19 @@
     "eslint-plugin-vue": "^9.21.1",
     "husky": "^8.0.0",
     "jsonc-eslint-parser": "^2.4.0",
-    "lint-staged": "^15.2.2"
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.35",
+    "postcss-html": "^1.6.0",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.71.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-recess-order": "^4.6.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.1.0"
   },
   "engines": {
     "node": ">= 16",
@@ -36,6 +50,7 @@
     }
   },
   "lint-staged": {
-    "*.{html,js,ts,jsx,tsx,vue,md,json}": "eslint --fix"
+    "*.{html,js,ts,jsx,tsx,vue,md,json}": "eslint --fix",
+    "*.{html,css,scss,less,vue}": "stylelint --fix"
   }
 }

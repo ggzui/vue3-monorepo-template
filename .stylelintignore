@@ -1,0 +1,10 @@
+dist
+public
+coverage
+node_modules
+
+.*
+*.png
+*.eot
+*.ttf
+*.woff

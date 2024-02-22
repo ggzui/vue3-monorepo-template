@@ -1,0 +1,8 @@
+dist
+public
+coverage
+node_modules
+
+.*
+playground
+pnpm-lock.yaml
